@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>LS AgileWorks | Agilidade, Métricas e Delivery</title>
+  <meta name="description" content="LS AgileWorks: base prática sobre agilidade, métricas de fluxo e exemplos interativos para apoiar decisões e previsibilidade." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lsagileworks.com.br/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LS AgileWorks | Agilidade, Métricas e Delivery" />
+  <meta property="og:description" content="Base prática sobre agilidade, métricas e um Burndown Builder para criar exemplos com parâmetros." />
+  <meta property="og:url" content="https://lsagileworks.com.br/" />
+  <meta property="og:image" content="https://lsagileworks.com.br/assets/img/og.png" />
+
+  <link rel="icon" href="/assets/img/logo.webp" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Pular para o conteúdo</a>
+
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <a class="brand" href="index.html" aria-label="LS AgileWorks">
+          <div class="brand-badge">LS</div>
+          <div class="brand-title">
+            <strong>LS AgileWorks</strong>
+            <span>Agilidade • Métricas • Delivery</span>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="basics.html">Agility Basics</a>
+          <a data-nav href="metrics.html">Metrics</a>
+          <a data-nav href="burndown.html">Burndown Builder</a>
+          <a data-nav href="about.html">About</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn" href="https://lucas.lsagileworks.com.br" rel="noopener">Perfil</a>
+          <button class="hamburger" data-hamburger aria-expanded="false" aria-controls="mobilePanel" aria-label="Abrir menu">
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-panel" id="mobilePanel" data-mobile-panel hidden>
+        <nav class="nav-links" aria-label="Navegação mobile">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="basics.html">Agility Basics</a>
+          <a data-nav href="metrics.html">Metrics</a>
+          <a data-nav href="burndown.html">Burndown Builder</a>
+          <a data-nav href="about.html">About</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="container">
+      <section class="hero">
+        <span class="badge">Prático • Objetivo • Visual</span>
+        <h1>Agilidade aplicada: conceitos, métricas e exemplos para apoiar decisões.</h1>
+        <p>
+          Este site é uma base simples para explicar agilidade sem “textão”, mostrar as principais métricas de fluxo e
+          permitir que você gere exemplos reais com parâmetros — como um burndown de projeto.
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="burndown.html">Abrir Burndown Builder</a>
+          <a class="btn" href="metrics.html">Ver métricas</a>
+        </div>
+      </section>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Agility Basics</h3>
+          <p>Uma visão rápida de Scrum, Kanban e SAFe — o que é e quando usar.</p>
+          <a class="btn" href="basics.html">Abrir</a>
+        </div>
+        <div class="card">
+          <h3>Metrics</h3>
+          <p>Cycle Time, Lead Time, Throughput, WIP e como evitar interpretações erradas.</p>
+          <a class="btn" href="metrics.html">Abrir</a>
+        </div>
+        <div class="card">
+          <h3>Burndown Builder</h3>
+          <p>Gere um exemplo com datas, duração, trabalho total e mudanças de escopo.</p>
+          <a class="btn" href="burndown.html">Abrir</a>
+        </div>
+      </div>
+
+      <div class="section-title">Objetivo</div>
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Para liderança e times</h2>
+          <ul>
+            <li>Explicar conceitos com exemplos simples.</li>
+            <li>Mostrar o “porquê” por trás das métricas.</li>
+            <li>Apoiar alinhamento: previsibilidade, riscos e dependências.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Sem complicação</h2>
+          <p>Sem frameworks pesados. Sem jargão desnecessário. O foco é utilidade e clareza.</p>
+          <div class="grid" style="grid-template-columns: repeat(3,1fr); gap:10px; margin-top:10px;">
+            <div class="kpi">
+              <div class="value">CT/LT</div>
+              <div class="label">Flow metrics</div>
+            </div>
+            <div class="kpi">
+              <div class="value">WIP</div>
+              <div class="label">Foco e fluxo</div>
+            </div>
+            <div class="kpi">
+              <div class="value">BD</div>
+              <div class="label">Exemplo visual</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> LS AgileWorks • <a href="about.html">Contato</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="/assets/js/common.js"></script>
+</body>
+</html>
