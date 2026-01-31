@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Burndown Builder | LS AgileWorks</title>
+  <meta name="description" content="Gere um exemplo de burndown com parâmetros: duração, trabalho total e mudanças de escopo. Inclui gráfico e tabela." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lsagileworks.com.br/burndown.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Burndown Builder | LS AgileWorks" />
+  <meta property="og:description" content="Burndown interativo com inputs, gráfico e tabela. Exporte CSV." />
+  <meta property="og:url" content="https://lsagileworks.com.br/burndown.html" />
+  <meta property="og:image" content="https://lsagileworks.com.br/assets/img/og.png" />
+
+  <link rel="icon" href="/assets/img/logo.webp" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Pular para o conteúdo</a>
+
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <a class="brand" href="index.html" aria-label="LS AgileWorks">
+          <div class="brand-badge">LS</div>
+          <div class="brand-title">
+            <strong>LS AgileWorks</strong>
+            <span>Agilidade • Métricas • Delivery</span>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="basics.html">Agility Basics</a>
+          <a data-nav href="metrics.html">Metrics</a>
+          <a data-nav href="burndown.html">Burndown Builder</a>
+          <a data-nav href="about.html">About</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn" href="https://lucas.lsagileworks.com.br" rel="noopener">Perfil</a>
+          <button class="hamburger" data-hamburger aria-expanded="false" aria-controls="mobilePanel" aria-label="Abrir menu">☰</button>
+        </div>
+      </div>
+
+      <div class="mobile-panel" id="mobilePanel" data-mobile-panel hidden>
+        <nav class="nav-links" aria-label="Navegação mobile">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="basics.html">Agility Basics</a>
+          <a data-nav href="metrics.html">Metrics</a>
+          <a data-nav href="burndown.html">Burndown Builder</a>
+          <a data-nav href="about.html">About</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="container">
+      <section class="hero">
+        <h1>Burndown Builder</h1>
+        <p>Crie um exemplo didático com parâmetros (duração, trabalho total e mudanças de escopo). Ideal para explicações com liderança e times.</p>
+      </section>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Parâmetros</h2>
+
+          <div class="form">
+            <div class="form-row">
+              <div class="field">
+                <label for="bd-start">Start date</label>
+                <input id="bd-start" type="date" />
+                <div class="hint">Usado apenas para rotular os dias.</div>
+              </div>
+
+              <div class="field small">
+                <label for="bd-days">Duration (days)</label>
+                <input id="bd-days" type="number" min="2" max="120" />
+              </div>
+
+              <div class="field small">
+                <label for="bd-total">Total work (points)</label>
+                <input id="bd-total" type="number" min="1" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="bd-model">Model</label>
+                <select id="bd-model">
+                  <option value="linear">Linear (ideal-ish)</option>
+                  <option value="realistic">Realistic (variation)</option>
+                </select>
+                <div class="hint">“Realistic” adiciona variação diária (bom para exemplos reais).</div>
+              </div>
+
+              <div class="field">
+                <label for="bd-var">Variability (%)</label>
+                <input id="bd-var" type="number" min="0" max="60" />
+                <div class="hint">Sugestão: 10–30%. Quanto maior, mais instável.</div>
+              </div>
+            </div>
+
+            <div class="field wide">
+              <label for="bd-scope">Scope changes (day:+/-points)</label>
+              <input id="bd-scope" type="text" placeholder="Ex: 3:+10, 6:+5, 8:-4" />
+              <div class="hint">Formato: <code>dia:+valor</code> separado por vírgula. Ex.: <code>3:+10, 6:+5</code>.</div>
+            </div>
+
+            <div class="cta">
+              <button class="btn btn-primary" id="bd-generate" type="button">Gerar</button>
+              <button class="btn" id="bd-reset" type="button">Reset</button>
+              <button class="btn" id="bd-csv" type="button">Download CSV</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Gráfico</h2>
+          <p id="bd-summary" class="hint">—</p>
+          <div style="position:relative; height:320px;">
+            <canvas id="bd-chart"></canvas>
+          </div>
+          <div class="hint" style="margin-top:10px;">
+            A linha ideal é ajustada quando há mudança de escopo, para refletir a nova realidade.
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">Tabela</div>
+      <div class="card">
+        <div class="table-wrap">
+          <table id="bd-table" aria-label="Tabela de burndown">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Label</th>
+                <th>Ideal</th>
+                <th>Actual</th>
+                <th>Scope Δ</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot></tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> LS AgileWorks
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="/assets/js/common.js"></script>
+  <script src="/assets/js/burndown.js"></script>
+</body>
+</html>
