@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Agility Basics | LS AgileWorks</title>
+  <meta name="description" content="Visão objetiva de Scrum, Kanban e SAFe: o que é, quando usar e armadilhas comuns." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lsagileworks.com.br/basics.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Agility Basics | LS AgileWorks" />
+  <meta property="og:description" content="Scrum, Kanban e SAFe: visão prática e sem complicação." />
+  <meta property="og:url" content="https://lsagileworks.com.br/basics.html" />
+  <meta property="og:image" content="https://lsagileworks.com.br/assets/img/og.png" />
+
+  <link rel="icon" href="/assets/img/logo.webp" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Pular para o conteúdo</a>
+
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <a class="brand" href="index.html" aria-label="LS AgileWorks">
+          <div class="brand-badge">LS</div>
+          <div class="brand-title">
+            <strong>LS AgileWorks</strong>
+            <span>Agilidade • Métricas • Delivery</span>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="basics.html">Agility Basics</a>
+          <a data-nav href="metrics.html">Metrics</a>
+          <a data-nav href="burndown.html">Burndown Builder</a>
+          <a data-nav href="about.html">About</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn" href="https://lucas.lsagileworks.com.br" rel="noopener">Perfil</a>
+          <button class="hamburger" data-hamburger aria-expanded="false" aria-controls="mobilePanel" aria-label="Abrir menu">☰</button>
+        </div>
+      </div>
+
+      <div class="mobile-panel" id="mobilePanel" data-mobile-panel hidden>
+        <nav class="nav-links" aria-label="Navegação mobile">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="basics.html">Agility Basics</a>
+          <a data-nav href="metrics.html">Metrics</a>
+          <a data-nav href="burndown.html">Burndown Builder</a>
+          <a data-nav href="about.html">About</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="container">
+      <section class="hero">
+        <h1>Agility Basics</h1>
+        <p>Um guia curto para explicar conceitos sem virar palestra. Use em onboarding, alinhamento e preparação de stakeholders.</p>
+      </section>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Scrum</h3>
+          <p><strong>O que é:</strong> framework para lidar com problemas complexos via ciclos curtos e inspeção/adaptação.</p>
+          <p><strong>Quando usar:</strong> produto com incerteza e necessidade de feedback frequente.</p>
+          <p class="hint"><strong>Armadilha:</strong> “Scrum = velocidade”. Na prática, é clareza + foco + aprendizado.</p>
+        </div>
+
+        <div class="card">
+          <h3>Kanban</h3>
+          <p><strong>O que é:</strong> método de fluxo contínuo com limitação de WIP e otimização do sistema.</p>
+          <p><strong>Quando usar:</strong> trabalho com entradas constantes (suporte, manutenção, fila variável).</p>
+          <p class="hint"><strong>Armadilha:</strong> não limitar WIP → tudo vira “em andamento” e nada termina.</p>
+        </div>
+
+        <div class="card">
+          <h3>SAFe</h3>
+          <p><strong>O que é:</strong> modelo para escalar práticas ágeis em ambientes enterprise com múltiplos times.</p>
+          <p><strong>Quando usar:</strong> muitas dependências, governança e necessidade de alinhamento de estratégia.</p>
+          <p class="hint"><strong>Armadilha:</strong> excesso de cerimônia sem melhoria de fluxo.</p>
+        </div>
+      </div>
+
+      <div class="section-title">Checklist rápido para “agilidade de verdade”</div>
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Foco em entrega</h2>
+          <ul>
+            <li>Trabalho priorizado e visível.</li>
+            <li>WIP controlado.</li>
+            <li>Definição de pronto clara.</li>
+            <li>Aprendizado (retros) com ação.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Transparência para decisões</h2>
+          <ul>
+            <li>Métricas de fluxo (CT/LT/Throughput).</li>
+            <li>Riscos e dependências explicitados.</li>
+            <li>Previsibilidade baseada em dados (não feeling).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> LS AgileWorks
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="/assets/js/common.js"></script>
+</body>
+</html>
