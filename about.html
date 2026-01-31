@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>About | LS AgileWorks</title>
+  <meta name="description" content="Sobre o LS AgileWorks e como entrar em contato." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lsagileworks.com.br/about.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About | LS AgileWorks" />
+  <meta property="og:description" content="Contato e propósito do site." />
+  <meta property="og:url" content="https://lsagileworks.com.br/about.html" />
+  <meta property="og:image" content="https://lsagileworks.com.br/assets/img/og.png" />
+
+  <link rel="icon" href="/assets/img/logo.webp" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Pular para o conteúdo</a>
+
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <a class="brand" href="index.html" aria-label="LS AgileWorks">
+          <div class="brand-badge">LS</div>
+          <div class="brand-title">
+            <strong>LS AgileWorks</strong>
+            <span>Agilidade • Métricas • Delivery</span>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="basics.html">Agility Basics</a>
+          <a data-nav href="metrics.html">Metrics</a>
+          <a data-nav href="burndown.html">Burndown Builder</a>
+          <a data-nav href="about.html">About</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn" href="https://lucas.lsagileworks.com.br" rel="noopener">Perfil</a>
+          <button class="hamburger" data-hamburger aria-expanded="false" aria-controls="mobilePanel" aria-label="Abrir menu">☰</button>
+        </div>
+      </div>
+
+      <div class="mobile-panel" id="mobilePanel" data-mobile-panel hidden>
+        <nav class="nav-links" aria-label="Navegação mobile">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="basics.html">Agility Basics</a>
+          <a data-nav href="metrics.html">Metrics</a>
+          <a data-nav href="burndown.html">Burndown Builder</a>
+          <a data-nav href="about.html">About</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="container">
+      <section class="hero">
+        <h1>About</h1>
+        <p>Este site existe para explicar agilidade com clareza e oferecer exemplos práticos (como burndown) para apoiar alinhamento e previsibilidade.</p>
+      </section>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Contato</h2>
+          <p>Se quiser conversar sobre agilidade, métricas, delivery e melhoria de fluxo:</p>
+          <ul>
+            <li>Email: <a href="mailto:lucas02s.oliveira@gmail.com">lucas02s.oliveira@gmail.com</a></li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/pmlsousa" rel="noopener">linkedin.com/in/pmlsousa</a></li>
+            <li>Perfil: <a href="https://lucas.lsagileworks.com.br" rel="noopener">lucas.lsagileworks.com.br</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Como evoluir o site</h2>
+          <ul>
+            <li>Adicionar exemplos de CFD e WIP com simulação.</li>
+            <li>Adicionar “templates” de report (weekly, PI, release).</li>
+            <li>Incluir estudos de caso (sem dados sensíveis).</li>
+          </ul>
+          <p class="hint">Se você quiser, eu preparo uma página “Case Studies” com estrutura pronta.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> LS AgileWorks
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="/assets/js/common.js"></script>
+</body>
+</html>
