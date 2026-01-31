@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Metrics | LS AgileWorks</title>
+  <meta name="description" content="Métricas essenciais de fluxo: Cycle Time, Lead Time, Throughput, WIP e como interpretar corretamente." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lsagileworks.com.br/metrics.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Metrics | LS AgileWorks" />
+  <meta property="og:description" content="Entenda métricas de fluxo e evite interpretações erradas." />
+  <meta property="og:url" content="https://lsagileworks.com.br/metrics.html" />
+  <meta property="og:image" content="https://lsagileworks.com.br/assets/img/og.png" />
+
+  <link rel="icon" href="/assets/img/logo.webp" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Pular para o conteúdo</a>
+
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <a class="brand" href="index.html" aria-label="LS AgileWorks">
+          <div class="brand-badge">LS</div>
+          <div class="brand-title">
+            <strong>LS AgileWorks</strong>
+            <span>Agilidade • Métricas • Delivery</span>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="basics.html">Agility Basics</a>
+          <a data-nav href="metrics.html">Metrics</a>
+          <a data-nav href="burndown.html">Burndown Builder</a>
+          <a data-nav href="about.html">About</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn" href="https://lucas.lsagileworks.com.br" rel="noopener">Perfil</a>
+          <button class="hamburger" data-hamburger aria-expanded="false" aria-controls="mobilePanel" aria-label="Abrir menu">☰</button>
+        </div>
+      </div>
+
+      <div class="mobile-panel" id="mobilePanel" data-mobile-panel hidden>
+        <nav class="nav-links" aria-label="Navegação mobile">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="basics.html">Agility Basics</a>
+          <a data-nav href="metrics.html">Metrics</a>
+          <a data-nav href="burndown.html">Burndown Builder</a>
+          <a data-nav href="about.html">About</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="container">
+      <section class="hero">
+        <h1>Metrics</h1>
+        <p>Métricas servem para orientar decisões e melhorar o sistema — não para “rankear” pessoas.</p>
+      </section>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Cycle Time (CT)</h2>
+          <p><strong>O que é:</strong> tempo do item entre “in progress” → “done”.</p>
+          <p><strong>Por que importa:</strong> mede fluxo e estabilidade do processo.</p>
+          <p class="hint"><strong>Armadilhas:</strong> comparar times diferentes sem contexto; ignorar WIP.</p>
+        </div>
+
+        <div class="card">
+          <h2>Lead Time (LT)</h2>
+          <p><strong>O que é:</strong> tempo do item desde a criação/commitment → entrega.</p>
+          <p><strong>Por que importa:</strong> expectativa do cliente/stakeholder.</p>
+          <p class="hint"><strong>Armadilha:</strong> LT alto pode ser fila (backlog) e não execução.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="margin-top:14px;">
+        <div class="card">
+          <h3>Throughput</h3>
+          <p>Quantos itens terminam por período. Melhor para previsibilidade do que “velocidade” pura.</p>
+          <p class="hint"><strong>Nota:</strong> use classes de serviço (bugs, stories, tech debt) para leitura melhor.</p>
+        </div>
+        <div class="card">
+          <h3>WIP</h3>
+          <p>Trabalho em andamento. O controle de WIP é um dos maiores aceleradores de fluxo.</p>
+          <p class="hint"><strong>Dica:</strong> WIP alto quase sempre aumenta CT.</p>
+        </div>
+        <div class="card">
+          <h3>CFD</h3>
+          <p>Gráfico de fluxo cumulativo. Excelente para ver gargalos e estabilidade de processo.</p>
+          <p class="hint"><strong>Dica:</strong> “faixa” crescendo indica fila / bloqueio.</p>
+        </div>
+      </div>
+
+      <div class="section-title">Quer um exemplo visual rápido?</div>
+      <div class="card">
+        <h2>Burndown como exemplo didático</h2>
+        <p>Burndown é ótimo para explicar escopo, previsibilidade e impacto de mudanças. Para criar um exemplo com parâmetros:</p>
+        <a class="btn btn-primary" href="burndown.html">Abrir Burndown Builder</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> LS AgileWorks
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="/assets/js/common.js"></script>
+</body>
+</html>
