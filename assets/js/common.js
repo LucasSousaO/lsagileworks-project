@@ -16,6 +16,14 @@
         panel.hidden = true;
       }
     });
+
+    // ✅ NEW: Close menu when clicking a link inside the mobile panel
+    panel.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        btn.setAttribute('aria-expanded', 'false');
+        panel.hidden = true;
+      });
+    });
   }
 
   // Highlight active link
