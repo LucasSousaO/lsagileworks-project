@@ -409,6 +409,9 @@
   @supports (color: color-mix(in lab, red, red)) {
   .bg-white\/\[0\.06\] { background-color: color-mix(in oklab, var(--color-white) 6%, transparent); }
 }
+.bgwpp{
+   background-color:#25D366 
+}
   .fill-current { fill: currentcolor; }
   .fill-primary { fill: var(--primary); }
   .p-0 { padding: calc(var(--spacing) * 0); }
