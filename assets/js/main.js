@@ -220,7 +220,9 @@ function createWhatsAppButton(form, language) {
   button.dataset.waBtn = "1";
 
   button.className = [
+     "bgwpp",
     "inline-flex",
+    "bg-[#25D366]",
     "items-center",
     "justify-center",
     "gap-2",
@@ -239,13 +241,14 @@ function createWhatsAppButton(form, language) {
     "h-10",
     "rounded-md",
     "px-8",
-    "bg-[#25D366]",
     "text-white",
     "hover:bg-[#1ebe5d]",
     "border",
     "border-[#25D366]"
   ].join(" ");
-
+button.style.backgroundColor = "#25D366";
+button.style.borderColor = "#25D366";
+button.style.color = "#fff";
   button.innerHTML = `
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -282,7 +285,7 @@ function updateContactLinks() {
     const text = element.textContent?.trim();
 
     if (
-      text !== "contact@lsagileworks.com" &&
+      text !== "contact@lsagileworks.com.br" &&
       text !== CONTACT_EMAIL
     ) {
       return;
@@ -295,7 +298,7 @@ function updateContactLinks() {
     }
 
     element.innerHTML = element.innerHTML.replace(
-      "contact@lsagileworks.com",
+      "contact@lsagileworks.com.br",
       `<a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>`
     );
   });
